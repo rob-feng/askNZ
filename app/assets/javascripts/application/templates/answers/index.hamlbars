@@ -1,0 +1,10 @@
+.title Answers
+%ul.answers
+    = hb('each .') do
+        %li.answer
+            %div{:class => "answer_title"}= hb('title')
+            %div{:class => "answer_content"}= hb('content')
+            %a{:class => "agree", :"data-id" => "#{hb('id')}", :href => "#"}agree 
+            %span= hb('agree')
+            %a{:class => "disagree", :"data-id" => "#{hb('id')}", :href => "#"}disagree 
+            %span= hb('disagree')

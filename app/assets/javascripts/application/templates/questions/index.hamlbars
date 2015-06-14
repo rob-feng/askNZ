@@ -1,0 +1,20 @@
+.title Questions
+%ul.questions
+    = hb('each .') do
+        = hb ('if published') do
+            %li.question
+                %div{:class => "title"}#{hb('title')} (Answers count: #{hb('answersCount')})
+                %a{:class => "detail", :href => "#question/#{hb('id')}"} detail
+
+%form#question-create-form.form-horizontal
+    .control-group
+        %label.control-label{:for => "question-form-title"}Title:
+        .controls
+            %input{:type => "text", :id => "question-form-title", :placeholder => "Question goes to here"}
+    .control-group
+        %label.control-label{:for => "question-from-content"}Content:
+        .controls
+            %textarea{:class => "input-block-level", :rows => 3, :id => "question-from-content", :placeholder => "Details goes to here"}
+    .form-actions
+        %button{:type => "submit", :class => "btn btn-primary"}Create
+
